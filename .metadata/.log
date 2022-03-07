@@ -1,0 +1,10 @@
+!SESSION 2022-03-03 13:21:35.607 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=11.0.13
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=it_IT
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.epp.mpc.ui 1 0 2022-03-03 13:44:25.491
+!MESSAGE Performing Marketplace install request from http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1687099
