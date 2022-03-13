@@ -12,7 +12,6 @@ INDEX VERSION 1.131+/home/rabin/Scrivania/issLab2022/.metadata/.plugins/org.ecli
 3033237853.index
 1445864638.index
 11166308.index
-646308851.index
 2143998656.index
 4090506746.index
 1622367525.index

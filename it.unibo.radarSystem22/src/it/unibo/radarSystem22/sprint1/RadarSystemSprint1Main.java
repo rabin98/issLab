@@ -1,5 +1,7 @@
 package it.unibo.radarSystem22.sprint1;
  
+import org.json.JSONException;
+
 import it.unibo.radarSystem22.IApplication;
 import it.unibo.radarSystem22.domain.DeviceFactory;
 import it.unibo.radarSystem22.domain.interfaces.*;
@@ -24,7 +26,12 @@ private Controller controller;
 
 	public void setup( String domainConfig, String systemConfig  )  {
 		if( domainConfig != null ) {
-			DomainSystemConfig.setTheConfiguration(domainConfig);
+			try {
+				DomainSystemConfig.setTheConfiguration(domainConfig);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		if( systemConfig != null ) {
 			RadarSystemConfig.setTheConfiguration(systemConfig);

@@ -3,6 +3,8 @@ package it.unibo.radarSystem22.sprint1;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
@@ -20,19 +22,26 @@ public class RadarSystemConfig {
 	}
 	
 	public static void setTheConfiguration( String resourceName ) {
-		//Nella distribuzione resourceName è in una dir che include la bin  
+		//Nella distribuzione resourceName ï¿½ in una dir che include la bin  
 		FileInputStream fis = null;
 		try {
 			ColorsOut.out("%%% setTheConfiguration from file:" + resourceName);
 			if(  fis == null ) {
  				 fis = new FileInputStream(new File(resourceName));
 			}
-	        JSONTokener tokener = new JSONTokener(fis);
-	        JSONObject object   = new JSONObject(tokener);
+	        JSONTokener tokener = new JSONTokener(fis.toString());
+	        JSONObject object;
+			try {
+				object = new JSONObject(tokener);
+				tracing          = object.getBoolean("tracing");
+		        testing          = object.getBoolean("testing");
+		        RadarGuiRemote   = object.getBoolean("RadarGuiRemote");
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	 		
-   	        tracing          = object.getBoolean("tracing");
-	        testing          = object.getBoolean("testing");
-	        RadarGuiRemote   = object.getBoolean("RadarGuiRemote");
+   	        
  	        
 		} catch (FileNotFoundException e) {
  			ColorsOut.outerr("setTheConfiguration ERROR " + e.getMessage() );
