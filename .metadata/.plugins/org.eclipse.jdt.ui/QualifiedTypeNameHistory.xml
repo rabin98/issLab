@@ -8,4 +8,6 @@
     <fullyQualifiedTypeName name="org.json.JSONTokener"/>
     <fullyQualifiedTypeName name="it.unibo.radarSystem22.domain.interfaces.ILed"/>
     <fullyQualifiedTypeName name="it.unibo.is.interfaces.IObserver"/>
+    <fullyQualifiedTypeName name="java.io.Reader"/>
+    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 </qualifiedTypeNameHistroy>

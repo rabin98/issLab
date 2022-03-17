@@ -21,10 +21,10 @@ private Controller controller;
 
 	@Override
 	public String getName() {	 
-		return "RadarSystemSprint1Main";
+		return this.getClass().getName();
 	}
 
-	public void setup( String domainConfig, String systemConfig  )  {
+	public void setup( String domainConfig, String systemConfig  ) throws JSONException  {
 		if( domainConfig != null ) {
 			try {
 				DomainSystemConfig.setTheConfiguration(domainConfig);
@@ -54,7 +54,7 @@ private Controller controller;
 	
  	
 	@Override
-	public void doJob( String domainConfig, String systemConfig ) {
+	public void doJob( String domainConfig, String systemConfig ) throws JSONException {
 		setup(domainConfig, systemConfig);
 		configure();
 		//start
@@ -89,11 +89,16 @@ private Controller controller;
  	public ISonar getSonar() { return sonar; }
  	public Controller getController() { return controller; }
 	
-	public static void main( String[] args) throws Exception {
-		BasicUtils.aboutThreads("At INIT with NO CONFIG files| ");
-		new RadarSystemSprint1Main().doJob(null,null);
-//		BasicUtils.aboutThreads("At INIT with  CONFIG files| ");
-//		new RadarSystemSprint1Main().doJob("DomainSystemConfig.json","RadarSystemConfig.json");
+ 	public static void main( String[] args) throws Exception {
+//		BasicUtils.aboutThreads("At INIT with NO CONFIG files| ");
+//		new RadarSystemSprint1Main().doJob(null,null);
+		
+ 	     
+	    //Per Rasp:
+	    BasicUtils.aboutThreads("At INIT with CONFIG files| ");
+	    new RadarSystemSprint1Main().doJob(
+	           "DomainSystemConfig.json","RadarSystemConfig.json");
+ 	     		
 		
  	}
 

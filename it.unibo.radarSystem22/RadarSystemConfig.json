@@ -24,7 +24,7 @@
 "sonarDelay"       : "100",
 "DLIMIT"           : "50",
 "ledGui"           : "false",
-"RadarGuiRemote"   : "true",
+"RadarGuiRemote"   : "false",
 "tracing"          : "false",
 "testing"          : "false"
 

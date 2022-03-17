@@ -3,6 +3,7 @@ package it.unibo.radarSystem22.domain.utils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
 import java.io.Reader;
 
 import org.json.JSONException;
@@ -29,14 +30,16 @@ public class DomainSystemConfig {
 		setTheConfiguration("../DomainSystemConfig.json");
 	}
 	
-	public static void setTheConfiguration( String resourceName ) throws JSONException { 
-		FileInputStream fis = null;
+	public static void setTheConfiguration( String resourceName ) throws JSONException{ 
+		FileInputStream fis=null;
+		Reader rd=null;
 		try {
 			ColorsOut.out("%%% setTheConfiguration from file:" + resourceName);
 			if(  fis == null ) {
  				 fis = new FileInputStream(new File(resourceName));
+ 				 rd=new InputStreamReader(fis);
 			}
-	        JSONTokener tokener = new JSONTokener(fis.toString());
+	        JSONTokener tokener = new JSONTokener(rd);
 	        JSONObject object   = new JSONObject(tokener);
 	 		
 	        simulation          = object.getBoolean("simulation");
