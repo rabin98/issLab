@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.io.Reader;
+
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import it.unibo.comm2022.ProtocolType;
@@ -17,12 +19,12 @@ public class CommSystemConfig {
  	public static ProtocolType protcolType = ProtocolType.tcp;
  	public static boolean tracing          = false;
 
-	public static void setTheConfiguration(  ) {
+	public static void setTheConfiguration(  ) throws JSONException {
 		setTheConfiguration("../CommSystemConfig.json");
 	}
 	
-	public static void setTheConfiguration( String resourceName ) {
-		//Nella distribuzione resourceName è in una dir che include la bin  
+	public static void setTheConfiguration( String resourceName ) throws JSONException {
+		//Nella distribuzione resourceName ï¿½ in una dir che include la bin  
 		FileInputStream fis = null;
 		try {
 			ColorsOut.out("%%% setTheConfiguration from file:" + resourceName);

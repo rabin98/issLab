@@ -11,7 +11,7 @@ import it.unibo.comm2022.proxy.ProxyAsClient;
 import it.unibo.comm2022.utils.ColorsOut;
 
 public class TestProxyTcp {
-public static final int testPort = 8112; 
+public static final int testPort = 8081; 
 	private TcpServer server;
 
 	@Before

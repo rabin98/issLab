@@ -7,7 +7,7 @@ import org.junit.Test;
  
 
 public class TestTcpSupports {
-public static final int testPort = 8112; 
+public static final int testPort = 8081; 
 private TcpServer server;
 
 

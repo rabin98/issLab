@@ -61,7 +61,7 @@ private RadarSystemSprint1Main sys;
 		};
 		
 		sys.getController().start( endFun, 1 ); //one-shot
-  	    BasicUtils.delay(1000) ; //give time to see ... 		
+  	    BasicUtils.delay(5000) ; //give time to see ... 		
 	}
  
 }
